@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j1j&@%f4wo*v%m_s$a%)eiv#!i#=e0zqr4670os5+_@vwt1yck
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.versal.app']
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
 # Application definition
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'blog.apps.BlogConfig',
+    'example',
     'corsheaders',
 ]
 
