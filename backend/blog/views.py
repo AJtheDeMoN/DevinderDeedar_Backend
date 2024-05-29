@@ -45,3 +45,6 @@ def prose_list(request):
     prose_list = [{'id': prose.id, 'content':prose.content} for prose in proses]
     return JsonResponse({'proses': prose_list})
 
+def activator(request):
+    return JsonResponse({'ok': 'ok'})
+
