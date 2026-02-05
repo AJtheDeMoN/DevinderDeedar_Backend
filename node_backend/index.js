@@ -6,7 +6,13 @@ const path = require('path');
 const app = express();
 const port = 8000; // Django usually runs on 8000, but might conflict if both run. I'll stick to 8000 as requested "same exact backend", but user might want to run them simultaneously. I'll use 8000 but warn if it fails. Actually, I'll use 8001 to be safe or 8000 if they stop django. Let's use 8000 to match "exact backend".
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://devinder-deedar.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true
+}));
 app.use(express.json());
 
 // Path to the existing Django SQLite database
@@ -122,3 +128,4 @@ app.listen(port, () => {
 
 // Keep alive
 setInterval(() => {}, 1000);
+
